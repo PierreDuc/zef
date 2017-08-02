@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "baseUrl": "",
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es2016"],
+    "mapRoot": "./",
+    "module": "es6",
+    "moduleResolution": "node",
+    "outDir": "../dist/out-tsc/spec",
+    "sourceMap": true,
+    "target": "es6",
+    "types": [
+      "firebase",
+      "tinycolor2"
+    ],
+    "typeRoots": [
+      "../node_modules/@types"
+    ]
+  },
+  "files": [
+    "test.ts"
+  ],
+  "include": [
+    "**/*.spec.ts"
+  ]
+}
