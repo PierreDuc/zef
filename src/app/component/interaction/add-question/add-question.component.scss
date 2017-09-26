@@ -1,0 +1,5 @@
+@import '../app-add.mixin';
+
+:host {
+  @include app-add();
+}

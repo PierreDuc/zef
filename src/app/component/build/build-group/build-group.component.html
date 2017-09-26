@@ -1,0 +1,10 @@
+<div class="group-header" fxLayout fxLayoutAlign="left center" fxLayoutGap="10px" [appBuildLink]="group.key">
+  <md-icon>layers</md-icon>
+  <div fxFlex [innerHtml]="group.title"></div>
+</div>
+
+<app-build-question *ngFor="let question of group.questions;trackBy:trackByKey" [question]="question"></app-build-question>
+
+<div class="group-footer">
+  <app-add-question [group]="group"></app-add-question>
+</div>

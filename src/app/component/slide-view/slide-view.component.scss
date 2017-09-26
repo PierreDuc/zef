@@ -1,0 +1,67 @@
+@import '../../../theme';
+@import './slide-view.variables';
+
+:host {
+  position: relative;
+
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  background: mat-color($app-accent, default, 0.1);
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.50);
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  padding: 20px $distance-side-slide;
+}
+
+.swiper-slide {
+  height: calc(100% - #{$distance-top-slide * 2});
+}
+
+.swiper-wrapper {
+  app-add-question {
+    flex: 1 0 auto;
+    justify-content: center;
+    border: 2px dashed #DDD;
+    border-radius: 10px;
+
+    font-size: 20px;
+  }
+}
+
+.slide-wrapper {
+  height: 100%;
+  .slide {
+    display: block;
+
+    padding: 100px 50px;
+    border-radius: 10px;
+
+    background: #FFF;
+  }
+
+  &.is-group {
+    .slide {
+      background: mat-color($app-primary);
+      color: #FFF;
+    }
+  }
+
+  &.in-group,
+  &.is-group {
+    .slide,
+    app-add-question {
+      // to get a filled outline with straight corners, we need box-shadow and outline together to fill the border-radius gap
+      outline: $distance-group-outline solid mat-color($app-primary, A200);
+      box-shadow: 0 0 0 $distance-group-outline mat-color($app-primary, A200);
+    }
+  }
+  app-add-question {
+    flex: none;
+    margin-top: 20px;
+  }
+}

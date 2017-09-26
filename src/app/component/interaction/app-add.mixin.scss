@@ -1,0 +1,18 @@
+@import '../../../theme';
+
+@mixin app-add() {
+  display: flex;
+  align-items: center;
+
+  padding: 15px 20px;
+
+  background: #FFF;
+  cursor: pointer;
+  md-icon {
+    color: mat-color($app-accent);
+  }
+  .label {
+    margin-left: 10px;
+  }
+}
+

@@ -1,4 +1,5 @@
 import { ZefAssignmentPage } from './app.po';
+import {AppTitle} from '../src/app/core/const/app-title.const';
 
 describe('zef-assignment App', function() {
   let page: ZefAssignmentPage;
@@ -7,8 +8,8 @@ describe('zef-assignment App', function() {
     page = new ZefAssignmentPage();
   });
 
-  it('should display message saying app works', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+  it(`should display text saying ${AppTitle}`, async () => {
+    await page.navigateTo();
+    expect(page.getParagraphText()).toEqual(AppTitle);
   });
 });

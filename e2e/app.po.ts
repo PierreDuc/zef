@@ -1,11 +1,12 @@
 import { browser, element, by } from 'protractor';
+import {promise} from 'selenium-webdriver';
 
 export class ZefAssignmentPage {
-  navigateTo() {
-    return browser.get('/');
+  navigateTo(): promise.Promise<any> {
+    return browser.get('/build');
   }
 
   getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+    return element(by.css('.app-title')).getText();
   }
 }

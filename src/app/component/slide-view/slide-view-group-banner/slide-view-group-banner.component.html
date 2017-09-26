@@ -1,0 +1,7 @@
+<div *ngIf="!!activeGroup" class="banner" fxLayout fxLayoutAlign="space-between center">
+  <div class="spacer"></div>
+  <div [innerHtml]="activeGroup.title"></div>
+  <div class="spacer" fxLayout fxLayoutAlign="center center">
+    <md-icon *ngIf="inGroupQuestion">remove_red_eye</md-icon>
+  </div>
+</div>

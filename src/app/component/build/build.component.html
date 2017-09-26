@@ -1,0 +1,8 @@
+<div class="data-object-wrapper">
+  <app-build-header [title]="title"></app-build-header>
+</div>
+<div *ngFor="let dataObj of questionService.dataList" class="data-object-wrapper">
+  <app-build-question *ngIf="dataObj.type === types.Question" [question]="dataObj"></app-build-question>
+  <app-build-group *ngIf="dataObj.type === types.Group" [group]="dataObj"></app-build-group>
+</div>
+<app-build-footer></app-build-footer>

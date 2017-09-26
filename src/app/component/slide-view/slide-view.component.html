@@ -1,0 +1,17 @@
+<div class="swiper-container" [swiper]="swiperConfig" (indexChange)="onSwiperIndexChange($event)">
+  <div class="swiper-wrapper">
+    <ng-container *ngFor="let dataObj of questionService.stretchedList; trackBy:trackByKey; index as index;">
+        <div class="swiper-slide">
+          <div *ngIf="isVisibleIndex(index)" class="slide-wrapper" fxLayout="column"
+               [class.in-group]="!!dataObj.group" [class.is-group]="dataObj.type === types.Group">
+            <app-slide-view-group *ngIf="dataObj.type === types.Group" class="slide" fxFlex [group]="dataObj"></app-slide-view-group>
+            <app-slide-view-question *ngIf="dataObj.type === types.Question" class="slide" fxFlex [question]="dataObj"></app-slide-view-question>
+            <app-add-question *ngIf="showAddToGroup(dataObj)" [group]="getGroupByObj(dataObj)"></app-add-question>
+          </div>
+        </div>
+      </ng-container>
+    <app-add-question></app-add-question>
+  </div>
+  <div class="swiper-scrollbar"></div>
+</div>
+<app-slide-view-group-banner></app-slide-view-group-banner>

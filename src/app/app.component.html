@@ -1,37 +1,18 @@
-<div *ngIf="view === 'default'" class="app" fxLayout="column" fxLayoutAlign="center stretch">
-  <div class="title" fxLayout="row" fxLayoutAlign="center center">
-    {{title}}
-  </div>
-
-  <div class="content" fxLayout="column" fxLayoutAlign="center center" fxFlex>
-    Price: {{plan === 'monthly' ? 10 : 5}}
-    <br>
-    <br>
-
-    <button md-raised-button (click)="plan = 'annual'">Annual pricing</button>
-    <br>
-    <button md-raised-button (click)="view = 'company-info'">Company info</button>
-  </div>
-</div>
-
-<div *ngIf="view === 'company-info'" class="app" fxLayout="column" fxLayoutAlign="center stretch">
-  <div class="title" fxLayout="row" fxLayoutAlign="center center">
-    {{company}} - Company info
-  </div>
-
-  <div class="content" fxLayout="column" fxLayoutAlign="center center" fxFlex>
-    <md-card>
-      <md-card-header>
-        <md-card-title>Information</md-card-title>
-
-        <md-card-subtitle>Account</md-card-subtitle>
-      </md-card-header>
-
-      <md-card-content>
-        <md-input-container>
-          <input mdInput placeholder="Company name..." [(ngModel)]="company"/>
-        </md-input-container>
-      </md-card-content>
-    </md-card>
+<div class="app-wrapper" fxLayout="column" fxFlexFill>
+  <h1 class="app-title" [innerHtml]="title"></h1>
+  <div class="app-body" fxLayout fxLayoutGap="20px" fxFlex="1 1 100%">
+    <div class="app-left-nav">
+      <div fxLayout="column">
+        <nav md-tab-nav-bar>
+          <a #rla="routerLinkActive" *ngFor="let tab of tabs"
+             [routerLink]="tab.link" [innerHtml]="tab.label" [active]="rla.isActive"
+             md-tab-link routerLinkActive></a>
+        </nav>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <div class="app-main-view" fxFlex>
+      <router-outlet name="view"></router-outlet>
+    </div>
   </div>
 </div>

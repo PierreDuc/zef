@@ -1,28 +1,20 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "",
-    "declaration": false,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "lib": ["es2016"],
-    "mapRoot": "./",
-    "module": "es6",
-    "moduleResolution": "node",
-    "outDir": "../dist/out-tsc/spec",
-    "sourceMap": true,
-    "target": "es6",
+    "outDir": "../out-tsc/spec",
+    "baseUrl": "./",
+    "module": "commonjs",
+    "target": "es5",
     "types": [
-      "firebase",
-      "tinycolor2"
-    ],
-    "typeRoots": [
-      "../node_modules/@types"
+      "jasmine",
+      "node"
     ]
   },
   "files": [
     "test.ts"
   ],
   "include": [
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "**/*.d.ts"
   ]
 }

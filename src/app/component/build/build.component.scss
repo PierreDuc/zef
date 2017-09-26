@@ -1,0 +1,32 @@
+@import '../../../theme';
+
+:host {
+  display: block;
+  padding: 20px 30px;
+
+  overflow-y: auto;
+}
+
+.data-object-wrapper {
+  position: relative;
+
+  border: 1px solid #BBB;
+  border-radius: 3px;
+  margin: 20px auto 0;
+
+  background: #FFF;
+  + .data-object-wrapper {
+    &:before {
+      content: '';
+
+      position: absolute;
+      top: -21px;
+      left: 30px;
+
+      height: 20px;
+      width: 2px;
+
+      background: mat-color($app-primary);
+    }
+  }
+}

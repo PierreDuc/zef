@@ -1,0 +1,26 @@
+@import '../../../../theme';
+
+@import '../slide-view.variables';
+
+.banner {
+  z-index: 1;
+  position: absolute;
+  left: $distance-side-slide - $distance-group-outline;
+  right: $distance-side-slide - $distance-group-outline;
+  top: $distance-top-slide;
+
+  padding: 10px;
+
+  background: mat-color($app-primary, 700);
+  box-shadow: 0 3px 4px 0 mat-color($app-primary, 900, 0.6);
+  color: #FFF;
+  font-size: 26px;
+}
+
+.spacer {
+  width: 25px;
+}
+
+md-icon {
+  color: mat-color($app-accent);
+}

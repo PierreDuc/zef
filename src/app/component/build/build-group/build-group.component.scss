@@ -1,0 +1,29 @@
+@import '../../../../theme';
+@import '../build-link/build-link.directive';
+
+.group-footer,
+.group-header {
+  cursor: pointer;
+}
+
+.group-header {
+  position: relative;
+
+  padding: 15px 20px;
+
+  font-weight: bold;
+  color: mat-color($app-accent);
+
+  @include buildLink();
+}
+
+.group-footer {
+  border-top: 1px dashed #DDD;
+}
+
+app-build-question {
+  border-top: 1px solid #DDD;
+  + app-build-question {
+    border: none;
+  }
+}

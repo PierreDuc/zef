@@ -1,0 +1,27 @@
+@import '../../../../theme';
+
+:host {
+  &.light-input {
+    input {
+      color: #FFF;
+    }
+  }
+}
+
+input {
+  padding: 10px;
+  border: none;
+
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+  &:hover {
+    border-bottom: 1px solid mat-color($app-accent);
+  }
+  &:focus {
+    border-bottom: 3px solid mat-color($app-accent);
+
+    cursor: initial;
+  }
+}

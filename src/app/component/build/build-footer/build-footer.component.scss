@@ -1,0 +1,12 @@
+@import '../../../../theme';
+
+:host {
+  display: block;
+  margin-top: 20px;
+}
+
+app-add-question,
+app-add-group {
+  border: 1px dashed #333;
+  border-radius: 3px;
+}

@@ -1,0 +1,16 @@
+@import '../../../../theme';
+@import '../build-link/build-link.directive';
+
+:host {
+  display: block;
+}
+
+.question-wrapper {
+  position: relative;
+
+  padding: 15px 20px;
+  display: block;
+
+  @include buildLink();
+}
+
